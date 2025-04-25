@@ -4,7 +4,7 @@
 using System;
 using System.IO;
 
-// If you changed the "<ComplianceReportOutputPath>" property in .csproj file,
+// If you changed the "<ComplianceReportOutputPath>" property in the.csproj file,
 // you also need to update the value below:
 const string ReportLocation = "./";
 const string ComplianceReportFileName = "ComplianceReport.json";

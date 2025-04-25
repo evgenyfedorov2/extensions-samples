@@ -16,7 +16,7 @@ internal static class Program
     public static void Main()
     {
         // Here we construct the logger factory out of thin air,
-        // but in a real world scenario you would use the one provided by the DI container.
+        // but in a real-world scenario you would use the one provided by the DI container.
         using var loggerFactory =
             LoggerFactory.Create(builder =>
             {
@@ -34,13 +34,13 @@ internal static class Program
                     });
 
                 // We need to register the redactor that will handle all sensitive data.
-                // Here we use the "StarRedactor" which replaces the sensitive data with asterisks.
-                // In a real world scenario you would use the one that suits your needs (e.g. HMAC redactor).
+                // Here we use the "StarRedactor", which replaces the sensitive data with asterisks.
+                // In a real-world scenario you would use the one that suits your needs (e.g. HMAC redactor).
                 builder.Services.AddRedaction(x => x.SetRedactor<StarRedactor>(new DataClassificationSet(DataTaxonomy.PrivateData)));
             });
 
         var logger = loggerFactory.CreateLogger("MyDemoLogger");
-        
+
         Log.StartingUp(logger, new StartupAttributes(Environment.MachineName, nameof(ComplexObjectLogging)));
 
         Log.DataFrameSent(logger, new DataFrame(nameof(Program).Length, byte.MinValue, short.MaxValue));

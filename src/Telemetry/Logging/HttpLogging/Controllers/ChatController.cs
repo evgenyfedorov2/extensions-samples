@@ -11,9 +11,9 @@ namespace HttpLogging.Controllers;
 [Route("api/chats")]
 public class ChatController : ControllerBase
 {
-    // Data classification for "chatId" parameter will be taken from
+    // Data classification for the "chatId" parameter will be taken from
     // LoggingRedactionOptions.RouteParameterDataClasses configured in Startup.cs.
-    // "chatId" is private data, thus it's value will be redacted.
+    // "chatId" is private data, thus its value will be redacted.
     [HttpGet("{chatId}")]
     public string GetChat(string chatId)
     {
@@ -22,7 +22,7 @@ public class ChatController : ControllerBase
     }
 
     // You can use attributes to specify data classification for parameters.
-    // "memberId" is private data, thus it's value will be redacted.
+    // "memberId" is private data, thus its value will be redacted.
     [HttpGet("{chatId}/members/{memberId}")]
     public string GetChatMember(string chatId, [PrivateData] string memberId)
     {
@@ -31,7 +31,7 @@ public class ChatController : ControllerBase
     }
 
     // Data classification for "messageId" is configured in Startup.cs.
-    // "messageId" is public data, thus it's value will be logged as-is.
+    // "messageId" is public data, thus its value will be logged as-is.
     [HttpGet("{chatId}/messages/{messageId}")]
     public string GetChatMessage(string chatId, string messageId)
     {

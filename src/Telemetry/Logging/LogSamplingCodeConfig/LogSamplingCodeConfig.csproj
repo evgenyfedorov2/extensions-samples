@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="$(MicrosoftExtensionsLoggingConsoleVersion)" />
-    <PackageReference Include="Microsoft.Extensions.Telemetry" Version="9.4.0-preview.1.25174.4" />
+    <PackageReference Include="Microsoft.Extensions.Telemetry" Version="9.4.0" />
   </ItemGroup>
 
   <ItemGroup>

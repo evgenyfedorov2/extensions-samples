@@ -1,7 +1,6 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Threading;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.Sampling;
 using Microsoft.Extensions.Hosting;
@@ -25,15 +24,6 @@ internal static class Program
         {
             options.Rules.Add(
                 new RandomProbabilisticSamplerFilterRule(
-                    probability: .1d,
-                    categoryName: "System.*"));
-            options.Rules.Add(
-                new RandomProbabilisticSamplerFilterRule(
-                    probability: .25d,
-                    categoryName: "Microsoft.AspNetCore.*",
-                    eventId: 1001));
-            options.Rules.Add(
-                new RandomProbabilisticSamplerFilterRule(
                     probability: .05d,
                     eventId : 1001));
         });
@@ -42,13 +32,9 @@ internal static class Program
         var loggerFactory = app.Services.GetRequiredService<ILoggerFactory>();
         var logger = loggerFactory.CreateLogger("SamplingDemo");
 
-        while (true)
+        for (int i = 0; i < 1_000_000; i++)
         {
-            Log.EnteredWhileLoop(logger);
             Log.NoisyMessage(logger);
-            Log.LeftWhileLoop(logger);
-
-            Thread.Sleep(100);
         }
     }
 }

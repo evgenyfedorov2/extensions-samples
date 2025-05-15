@@ -19,7 +19,7 @@ hostBuilder.Logging.AddSimpleConsole(options =>
 });
 
 // Add the Global buffer to the logging pipeline.
-hostBuilder.Logging.AddGlobalBuffer(hostBuilder.Configuration);
+hostBuilder.Logging.AddGlobalBuffer(LogLevel.Information);
 
 using var app = hostBuilder.Build();
 

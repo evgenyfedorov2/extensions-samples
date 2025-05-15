@@ -65,6 +65,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LogBuffering", "LogBufferin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogBuffering", "src\Telemetry\Logging\LogBuffering\LogBuffering.csproj", "{FC23F26D-6039-4631-BF7B-6FE650D157DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalLogBufferingBasic", "src\Telemetry\Logging\GlobalLogBufferingBasic\GlobalLogBufferingBasic.csproj", "{137A5349-C4C5-4208-8FFD-5E566A886E62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalLogBufferingCodeBased", "src\Telemetry\Logging\GlobalLogBufferingCodeBased\GlobalLogBufferingCodeBased.csproj", "{0B40DBDA-1F14-4017-8B7C-A86BFE93B089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalLogBufferingFileBased", "src\Telemetry\Logging\GlobalLogBufferingFileBased\GlobalLogBufferingFileBased.csproj", "{E4DFBE80-3694-48B5-9418-5B8CB556CAC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerRequestLogBufferingBasic", "src\Telemetry\Logging\PerRequestLogBufferingBasic\PerRequestLogBufferingBasic.csproj", "{F37C93C2-4CDC-4B16-988D-412B6E1E58FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerRequestLogBufferingCodeBased", "src\Telemetry\Logging\PerRequestLogBufferingCodeBased\PerRequestLogBufferingCodeBased.csproj", "{3D77A704-8BC9-4F21-84F1-4F987F89439D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerRequestLogBufferingFileBased", "src\Telemetry\Logging\PerRequestLogBufferingFileBased\PerRequestLogBufferingFileBased.csproj", "{AA1CF963-2F6C-45ED-ABC7-A5B582282347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +127,30 @@ Global
 		{FC23F26D-6039-4631-BF7B-6FE650D157DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC23F26D-6039-4631-BF7B-6FE650D157DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC23F26D-6039-4631-BF7B-6FE650D157DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{137A5349-C4C5-4208-8FFD-5E566A886E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137A5349-C4C5-4208-8FFD-5E566A886E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137A5349-C4C5-4208-8FFD-5E566A886E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137A5349-C4C5-4208-8FFD-5E566A886E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B40DBDA-1F14-4017-8B7C-A86BFE93B089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B40DBDA-1F14-4017-8B7C-A86BFE93B089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B40DBDA-1F14-4017-8B7C-A86BFE93B089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B40DBDA-1F14-4017-8B7C-A86BFE93B089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4DFBE80-3694-48B5-9418-5B8CB556CAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4DFBE80-3694-48B5-9418-5B8CB556CAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4DFBE80-3694-48B5-9418-5B8CB556CAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4DFBE80-3694-48B5-9418-5B8CB556CAC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37C93C2-4CDC-4B16-988D-412B6E1E58FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37C93C2-4CDC-4B16-988D-412B6E1E58FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37C93C2-4CDC-4B16-988D-412B6E1E58FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37C93C2-4CDC-4B16-988D-412B6E1E58FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D77A704-8BC9-4F21-84F1-4F987F89439D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D77A704-8BC9-4F21-84F1-4F987F89439D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D77A704-8BC9-4F21-84F1-4F987F89439D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D77A704-8BC9-4F21-84F1-4F987F89439D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA1CF963-2F6C-45ED-ABC7-A5B582282347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1CF963-2F6C-45ED-ABC7-A5B582282347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1CF963-2F6C-45ED-ABC7-A5B582282347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1CF963-2F6C-45ED-ABC7-A5B582282347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +179,12 @@ Global
 		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {248CB37C-2412-4231-96C0-092413C10D4B}
 		{47653C1D-E48B-4AF0-9D82-850D3B3EF9A0} = {248CB37C-2412-4231-96C0-092413C10D4B}
 		{FC23F26D-6039-4631-BF7B-6FE650D157DA} = {47653C1D-E48B-4AF0-9D82-850D3B3EF9A0}
+		{137A5349-C4C5-4208-8FFD-5E566A886E62} = {47653C1D-E48B-4AF0-9D82-850D3B3EF9A0}
+		{0B40DBDA-1F14-4017-8B7C-A86BFE93B089} = {47653C1D-E48B-4AF0-9D82-850D3B3EF9A0}
+		{E4DFBE80-3694-48B5-9418-5B8CB556CAC4} = {47653C1D-E48B-4AF0-9D82-850D3B3EF9A0}
+		{F37C93C2-4CDC-4B16-988D-412B6E1E58FF} = {47653C1D-E48B-4AF0-9D82-850D3B3EF9A0}
+		{3D77A704-8BC9-4F21-84F1-4F987F89439D} = {47653C1D-E48B-4AF0-9D82-850D3B3EF9A0}
+		{AA1CF963-2F6C-45ED-ABC7-A5B582282347} = {47653C1D-E48B-4AF0-9D82-850D3B3EF9A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6083D400-BF26-4ACE-86A8-778D26A8FA6A}

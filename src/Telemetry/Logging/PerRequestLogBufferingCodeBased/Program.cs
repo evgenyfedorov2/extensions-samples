@@ -19,7 +19,16 @@ hostBuilder.Logging.AddSimpleConsole(options =>
 });
 
 // Add the Global buffer to the logging pipeline.
-hostBuilder.Logging.AddGlobalBuffer(hostBuilder.Configuration);
+hostBuilder.Logging.AddGlobalBuffer(options =>
+{
+    options.MaxBufferSizeInBytes = 104857600; // 100 MB
+    options.MaxLogRecordSizeInBytes = 51200; // 50 KB
+    options.AutoFlushDuration = TimeSpan.FromSeconds(30);
+    options.Rules.Add(new LogBufferingFilterRule(
+        categoryName: "BufferingDemo",
+        logLevel: LogLevel.Information));
+    options.Rules.Add(new LogBufferingFilterRule(eventId: 1001));
+});
 
 using var app = hostBuilder.Build();
 

@@ -3,11 +3,11 @@
 
 using System;
 using System.Threading.Tasks;
-using LogBuffering;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.Buffering;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Log = LogBufferingFileBased.Log;
 
 var hostBuilder = Host.CreateApplicationBuilder();
 
@@ -19,7 +19,7 @@ hostBuilder.Logging.AddSimpleConsole(options =>
 });
 
 // Add the Global buffer to the logging pipeline.
-hostBuilder.Logging.AddGlobalBuffer(hostBuilder.Configuration);
+hostBuilder.Logging.AddGlobalBuffer(hostBuilder.Configuration.GetSection("Logging"));
 
 using var app = hostBuilder.Build();
 
@@ -31,7 +31,7 @@ for (int i = 1; i < 21; i++)
 {
     try
     {
-        logger.InformationMessage();
+        Log.InformationMessage(logger);
 
         if(i % 10 == 0)
         {
@@ -40,7 +40,7 @@ for (int i = 1; i < 21; i++)
     }
     catch (Exception ex)
     {
-        logger.ErrorMessage(ex.Message);
+        Log.ErrorMessage(logger, ex.Message);
         buffer.Flush();
     }
 
